@@ -3,5 +3,5 @@ crontab -e
 send email every minute
 * * * * * python3 ~/flask/sendEmail.py
 
-send email every day at 8:00 am
+send email every day at 8:00 a.m
 0 8 * * * python3 ~/flask/sendEmail.py
