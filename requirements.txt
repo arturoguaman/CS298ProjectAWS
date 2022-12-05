@@ -1,1 +1,4 @@
+install pyhton3
+install pip3
+install flask==2.0.0
 pip install jokeapi
