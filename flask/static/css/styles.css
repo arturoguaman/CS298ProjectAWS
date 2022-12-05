@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+}
+form{
+    font-size: 24px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    justify-content:center;
+    gap: 10px 0px;
+}
+form label{
+    width: 13%;
+}
+form input:first-of-type{
+    width: 70%;
+}
+form input:last-of-type{
+    width: 50%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+form input:last-of-type:hover{
+    background-color: grey;
+    color: black;
+}
+.addMoreEmail{
+    margin: auto;
+    width: 150px;
+    padding-top: 20px;
+}
+.addMoreEmail a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-size: 18px;
+    padding: 10px;
+}
+.addMoreEmail a:hover{
+    color: black;
+    background-color: grey;
+}
