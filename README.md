@@ -1,7 +1,9 @@
 # CS298ProjectAWS
 
-This application retrieves an email and adds it to the Joke of the day topic.
-A python script calls joke of the day api and retrieves a random joke. 
-A cron command runs a python script to send email with joke to all subscribers of Joke of the day.
+This application uses aws SNS,EC2 and JokeofDay API to send email of a joke to all sbscribers of topic Joke_of_day
+1) A python script(addEmail.py) retrives a email from user input. Checks if email is subscribes. If not a subscribe request 
+   email will be sent.
+2) A python script(sendEmail.py) retrieves random joke from API and sends joke to all subscribers of topic Joke_of_day
+3) optionally A cron command can run python script sendEmail.py to send email to all subscribers at a sheduled time.
 
 ![My Image](Diagram.png)
