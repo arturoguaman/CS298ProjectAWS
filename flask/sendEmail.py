@@ -15,6 +15,7 @@ client = boto3.client(
 response = client.create_topic(Name="joke_of_day")
 topic_arn = response["TopicArn"]
 
+#retrive joke from jokeapi
 async def print_joke():
         global jokeLine
         j = await Jokes()  # Initialise the class
@@ -28,6 +29,7 @@ async def print_joke():
 
 asyncio.run(print_joke())
 
+#send joke to all subscribers in email
 client.publish(TopicArn=topic_arn,
                 Message = jokeLine,
                 Subject="Joke Of The Day!")
