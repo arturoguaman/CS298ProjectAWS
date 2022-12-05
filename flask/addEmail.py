@@ -10,19 +10,21 @@ app = Flask(__name__)
 def index():
         return render_template("index.html")
 
-
 client = boto3.client(
         "sns",
         aws_access_key_id="xxxxxxxxxxxxxxxxx",
         aws_secret_access_key="xxxxxxxxxxxxx",
         region_name="us-east-1")
+
 topic_arn=""
+
+#create joke of day topic
 def createTopic():
         response = client.create_topic(Name="joke_of_day")
         global topic_arn
         topic_arn = response["TopicArn"]
 
-
+#add email to topic joke_of_day
 def sns(email):
         subscribed = False
         subscriptions = client.list_subscriptions_by_topic(TopicArn=topic_arn).get('Subscriptions')
@@ -33,7 +35,7 @@ def sns(email):
                 response = client.subscribe(TopicArn=topic_arn, Protocol="Email", Endpoint= email)
                 subscription_arn = response["SubscriptionArn"]
 
-
+#get email from user input
 @app.route('/recievedEmail', methods = ['POST'])
 def getEmail():
         createTopic()
